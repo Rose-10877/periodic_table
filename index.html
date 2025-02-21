@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table</title>
+    <link rel="stylesheet" href="style.css">
+    <a href="file:///C:/Users/Acer/Desktop/Periodic%20table/index.html"></a>
+
+    <style>
+        /* Popup display */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: black;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            text-align: center;
+            color: white;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            font-size: 50px;
+            cursor: pointer;
+        }
+
+        /* Layout for legend and periodic table */
+        .main-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Legend Styles */
+        .legend {
+            display: flex;
+            gap: 10px;
+            padding: 5px;
+            background: #222;
+            border-radius: 8px;
+            color: white;
+            min-width: 200px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .color-box {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 4px;
+            display: inline-block;
+            border: 1px solid black;
+        }
+
+        /* Ensure the periodic table takes up remaining space */
+        .periodic-table {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Search Input -->
+        <input type="text" id="search" placeholder="Search Elements..." onkeyup="searchElement()">
+
+        <!-- Main Container: Legend on Left, Periodic Table on Right -->
+        <div class="main-container">
+            <!-- Legend (On the Left) -->
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: red;"></span> Nonmetals
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: brown;"></span> Noble Gases
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: orange;"></span> Alkali Metals
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: lightgreen;"></span> Alkaline Earth Metals
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: pink;"></span> Transition Metals
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: lightblue;"></span> Post-Transition Metals
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: green;"></span> Metalloids
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: teal;"></span> Halogens
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: purple;"></span> Lanthanides
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: sandybrown;"></span> Actinides
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: yellow;"></span> Late Transition Metals
+                </div>
+            </div>
+
+            <!-- Periodic Table -->
+            <div class="periodic-table">
+                <!-- Elements will be added dynamically here -->
+            </div>
+        </div>
+    </div>
+
+ <!-- Popup for displaying bond information -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span id="close-popup" class="close-popup">&times;</span>
+        <h2>Bond Information</h2>
+        <p id="bond-info"></p>
+
+        <!-- Input for bond type -->
+        <label for="bond-type-input"><strong>Bond Type:</strong></label>
+        <input type="text" id="bond-type-input" placeholder="Enter bond type..." />
+
+        <!-- Button to check answer -->
+
+        <button id="submit-bond" onclick="checkBondType()">Submit</button>
+<p id="bond-result"></p>
+
+        <!-- Result message -->
+        <p id="bond-result"></p>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
